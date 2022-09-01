@@ -1,4 +1,5 @@
 import { ShoppingCart } from "phosphor-react";
+import { InputNumber } from "../../../../components/InputNumber";
 
 import { CoffeeCardContainer } from './styles';
 
@@ -32,11 +33,7 @@ export function CoffeeCard({
             <span>R$</span>
             <span>{value}</span>
           </div>
-          <div>
-            <button type='button'>-</button>
-            <span>1</span>
-            <button type='button'>+</button>
-          </div>
+          <InputNumber />
           <button type='submit'>
             <ShoppingCart />
           </button>
