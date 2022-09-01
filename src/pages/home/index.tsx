@@ -15,6 +15,7 @@ import {
   CoffeeList,
   CoffeeCard
 } from './styles';
+import { coffeeList } from '../../constants/coffees';
 
 export function Home() {
   return (
@@ -64,117 +65,39 @@ export function Home() {
         </header>
 
         <CoffeeList>
-        <CoffeeCard>
-            <header>
-              <img src='src/assets/coffees/espresso-coffee.svg' alt="Café expresso" />
-            </header>
+          {coffeeList.map((coffee) => {
+            const { img, title, description, value } = coffee;
 
-            <main>
-              <h3>Title</h3>
-              <span>Description</span>
-            </main>
+            return (
+              <CoffeeCard>
+                <header>
+                  <img src={img} alt={title} />
+                </header>
 
-            <footer>
-              <form>
-                <div>
-                  <span>R$</span>
-                  <span>9,90</span>
-                </div>
-                <div>
-                  <button type='button'>-</button>
-                  <span>1</span>
-                  <button type='button'>+</button>
-                </div>
-                <button type='submit'>
-                  <ShoppingCart />
-                </button>
-              </form>
-            </footer>
-          </CoffeeCard>
+                <main>
+                  <h3>{title}</h3>
+                  <span>{description}</span>
+                </main>
 
-          <CoffeeCard>
-            <header>
-              <img src='src/assets/coffees/espresso-coffee.svg' alt="Café expresso" />
-            </header>
-
-            <main>
-              <h3>Title</h3>
-              <span>Description</span>
-            </main>
-
-            <footer>
-              <form>
-                <div>
-                  <span>R$</span>
-                  <span>9,90</span>
-                </div>
-                <div>
-                  <button type='button'>-</button>
-                  <span>1</span>
-                  <button type='button'>+</button>
-                </div>
-                <button type='submit'>
-                  <ShoppingCart />
-                </button>
-              </form>
-            </footer>
-          </CoffeeCard>
-
-          <CoffeeCard>
-            <header>
-              <img src='src/assets/coffees/espresso-coffee.svg' alt="Café expresso" />
-            </header>
-
-            <main>
-              <h3>Title</h3>
-              <span>Description</span>
-            </main>
-
-            <footer>
-              <form>
-                <div>
-                  <span>R$</span>
-                  <span>9,90</span>
-                </div>
-                <div>
-                  <button type='button'>-</button>
-                  <span>1</span>
-                  <button type='button'>+</button>
-                </div>
-                <button type='submit'>
-                  <ShoppingCart />
-                </button>
-              </form>
-            </footer>
-          </CoffeeCard>
-
-          <CoffeeCard>
-            <header>
-              <img src='src/assets/coffees/espresso-coffee.svg' alt="Café expresso" />
-            </header>
-
-            <main>
-              <h3>Title</h3>
-              <span>Description</span>
-            </main>
-
-            <footer>
-              <form>
-                <div>
-                  <span>R$</span>
-                  <span>9,90</span>
-                </div>
-                <div>
-                  <button type='button'>-</button>
-                  <span>1</span>
-                  <button type='button'>+</button>
-                </div>
-                <button type='submit'>
-                  <ShoppingCart />
-                </button>
-              </form>
-            </footer>
-          </CoffeeCard>
+                <footer>
+                  <form>
+                    <div>
+                      <span>R$</span>
+                      <span>{value}</span>
+                    </div>
+                    <div>
+                      <button type='button'>-</button>
+                      <span>1</span>
+                      <button type='button'>+</button>
+                    </div>
+                    <button type='submit'>
+                      <ShoppingCart />
+                    </button>
+                  </form>
+                </footer>
+              </CoffeeCard>
+            );
+          })}
         </CoffeeList>
       </CoffeeListContainer>
     </>
