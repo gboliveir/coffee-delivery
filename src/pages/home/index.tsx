@@ -12,10 +12,10 @@ import {
   SubTitle,
   CoffeeListContainer,
   CoffeeListTitle,
-  CoffeeList,
-  CoffeeCard
+  CoffeeList
 } from './styles';
 import { coffeeList } from '../../constants/coffees';
+import { CoffeeCard } from './components/CoffeeCard';
 
 export function Home() {
   return (
@@ -69,33 +69,13 @@ export function Home() {
             const { img, title, description, value } = coffee;
 
             return (
-              <CoffeeCard>
-                <header>
-                  <img src={img} alt={title} />
-                </header>
-
-                <main>
-                  <h3>{title}</h3>
-                  <span>{description}</span>
-                </main>
-
-                <footer>
-                  <form>
-                    <div>
-                      <span>R$</span>
-                      <span>{value}</span>
-                    </div>
-                    <div>
-                      <button type='button'>-</button>
-                      <span>1</span>
-                      <button type='button'>+</button>
-                    </div>
-                    <button type='submit'>
-                      <ShoppingCart />
-                    </button>
-                  </form>
-                </footer>
-              </CoffeeCard>
+              <CoffeeCard
+                key={`${title}${value}`}
+                img={img}
+                title={title}
+                description={description}
+                value={value}
+              />
             );
           })}
         </CoffeeList>
