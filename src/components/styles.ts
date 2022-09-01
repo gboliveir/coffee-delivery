@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 2rem 10rem;
+  padding: 2rem 0;
    
   background: ${(props) => props.theme.background};
 

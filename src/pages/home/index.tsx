@@ -7,10 +7,8 @@ import {
   BenefitsContainer,
   FlashyMessageContainer,
   FlashyTitle,
-  InformationalSpace,
   PresentationCardContainer,
   SubTitle,
-  CoffeeListContainer,
   CoffeeListTitle,
   CoffeeList
 } from './styles';
@@ -25,7 +23,7 @@ export function Home() {
           backgroundImage: `url(${backgroundImg})`
         }}
       >
-        <InformationalSpace>
+        <div>
           <FlashyMessageContainer>
             <FlashyTitle>Encontre o café perfeito para qualquer hora do dia</FlashyTitle>
             <SubTitle>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</SubTitle>
@@ -49,17 +47,17 @@ export function Home() {
               <span>O café chega fresquinho até você</span>
             </Benefits>
           </BenefitsContainer> 
-        </InformationalSpace>
+        </div>
         
-        <CoffeeListContainer> 
+        <div> 
           <img
             src={bigCoffeeImg}
             alt="Imagem de um grande copo de café de cor banca com preto e vários complementos vitaminicos em volta."
           />
-        </CoffeeListContainer>
+        </div>
       </PresentationCardContainer>
 
-      <CoffeeListContainer>
+      <div>
         <header>
           <CoffeeListTitle>Nossos cafés</CoffeeListTitle>
         </header>
@@ -79,7 +77,7 @@ export function Home() {
             );
           })}
         </CoffeeList>
-      </CoffeeListContainer>
+      </div>
     </>
   );
 }

@@ -3,14 +3,9 @@ import styled from "styled-components";
 export const PresentationCardContainer = styled.div`
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  height: 554px;
   gap: 3.5rem;
 
-  padding: 6rem 10rem;
-`
-
-export const InformationalSpace = styled.div`
-  
+  padding: 5.875rem 0;
 `
 
 export const FlashyMessageContainer = styled.div`
@@ -49,10 +44,6 @@ export const Benefits = styled.div`
   gap: 12px;
 
   color: ${(props) => props.theme["base-text"]};
-`
-
-export const CoffeeListContainer = styled.div`
-  padding: 6rem 10rem;
 `
 
 export const CoffeeListTitle = styled.h1`
