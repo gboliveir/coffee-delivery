@@ -45,20 +45,3 @@ export const Benefits = styled.div`
 
   color: ${(props) => props.theme["base-text"]};
 `
-
-export const CoffeeListTitle = styled.h1`
-  font-family: 'Baloo 2', sans-serif;
-  font-weight: bold;
-  font-size: 2rem;
-
-  margin-bottom: 1rem;
-
-  color: ${(props) => props.theme["base-subtitle"]};
-`
-
-export const CoffeeList = styled.main`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-
-`

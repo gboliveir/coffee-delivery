@@ -1,6 +1,10 @@
 import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react';
+
 import bigCoffeeImg from '../../assets/big-coffee.svg';
 import backgroundImg from '../../assets/background.svg';
+
+import { Menu } from './components/Menu';
+
 
 import {
   Benefits,
@@ -8,12 +12,8 @@ import {
   FlashyMessageContainer,
   FlashyTitle,
   PresentationCardContainer,
-  SubTitle,
-  CoffeeListTitle,
-  CoffeeList
+  SubTitle
 } from './styles';
-import { coffeeList } from '../../constants/coffees';
-import { CoffeeCard } from './components/CoffeeCard';
 
 export function Home() {
   return (
@@ -57,27 +57,7 @@ export function Home() {
         </div>
       </PresentationCardContainer>
 
-      <div>
-        <header>
-          <CoffeeListTitle>Nossos cafés</CoffeeListTitle>
-        </header>
-
-        <CoffeeList>
-          {coffeeList.map((coffee) => {
-            const { img, title, description, value } = coffee;
-
-            return (
-              <CoffeeCard
-                key={`${title}${value}`}
-                img={img}
-                title={title}
-                description={description}
-                value={value}
-              />
-            );
-          })}
-        </CoffeeList>
-      </div>
+      <Menu />
     </>
   );
 }
